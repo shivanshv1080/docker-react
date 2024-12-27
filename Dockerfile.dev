@@ -1,0 +1,13 @@
+FROM node:lts-alpine
+
+WORKDIR '/app'
+
+COPY ./package.json ./
+
+RUN npm install
+COPY ./ ./
+#  We can remove this command and can also keep it for ourself to be use in the future
+
+CMD ["npm","run","start"]
+
+
